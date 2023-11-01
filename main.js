@@ -69,10 +69,10 @@ function priceUpdate() {
 };
 
 function carSelect() {
-    let chosenCar=document.getElementById('chosen-car').value;
+    let selectedCar=document.getElementById('selected-car').value;
         
     for (let i=0; i<cars.length; i++){
-      if(cars[i].type == chosenCar) {
+      if(cars[i].type == selectedCar) {
         n=i;}
     };
     //change img + warranty + assurance

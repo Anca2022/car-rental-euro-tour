@@ -551,6 +551,13 @@ header{
         }
     }
 }
+.succes {
+    height:100vh;
+    p{ 
+        font-size:1.3rem;
+        text-align: center; 
+    }
+}
 .to-top{
     position:fixed; 
     bottom: 1rem;
@@ -753,6 +760,11 @@ footer{
             }
         }
     }
+    .succes {
+        p{ 
+            text-align:left; 
+        }
+    }
     footer{
         .container{
             text-align:left;
@@ -928,6 +940,11 @@ footer{
             max-width: unset;
             width: 700px;  
             padding: 1.5rem 6rem;
+        }
+    }
+    .succes {
+        p{ 
+            font-size:1.4rem; 
         }
     }
 }

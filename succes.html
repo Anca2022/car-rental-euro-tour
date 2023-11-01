@@ -43,84 +43,13 @@
         </div>
     </header>
     
-    <section class="first container reservation-page">
-        <h1 class="title">Rezervare masina</h1>
-        <p class="reservation-info">Pentru rezervari, va rugam sa sunati la numarul de telefon bla-bla, sau sa completati formularul de mai jos. </p>
-        
-        <form action="https://formsubmit.co/anca.m.antonescu@gmail.com" method="POST">
-            <!--honeypot + disable captcha-->
-            <input type="text" name="_honey" style="display:none;">
-            <input type="hidden" name="_captcha" value="false">
-           <!-- pagina afisata dupa submit <input type="hidden" name="_next" value="https:blabla/succes.html">  -->
-            <div class="reservation centered">
-                <div class="car-select">
-                    <h2>Selecteaza masina</h2>
-                    <select name="selected&nbsp;car" id="selected-car" required onchange="carSelect();">
-                        <option value="opel-corsa-1-4-i">Opel Corsa 1.4i</option>
-                        <option value="chevrolet-spark-0-8-i">Chevrolet Spark 0.8i</option>
-                        <option value="vw-passat-2-0-tdi">VW Passat 2.0 TDI</option>
-                    </select>
-                    <p class="reservation-price"><span id="no-days">0</span> zile - <span id="price-per-day">26</span> €/zi</p>
+    <section class="first container succes">
+        <h1 class="title">Mesajul a fost trimis!</h1>
+        <p>Va vom contacta cat de curand in legatura cu rezervarea dumneavoastra. </p>
+    </section>    
 
-                    <div class="reservation-img">
-                      <img src="img/opel-corsa-1-4-i-265.jpg" alt="Chosen car">
-                    </div>
-                </div>
-        
-                <div class="date-select">
-                    <h2>Alege Datele</h2>
-                    <div class="pick-up-date centered">
-                        <p>Data preluare</p>
-                        <input type="date" name="pick&nbsp;up&nbsp;date" id="pick-up" required>
-                    </div>
-                    <div class="dropoff-date centered">
-                        <p>Data predare</p>
-                        <input type="date" name="dropoff&nbsp;date" id="dropoff" required>
-                    </div>
-                </div>
-        
-                <div class="personal-info">
-                    <h2>Date personale</h2>
-                    <label for="name">Nume <span>*</span></label>
-                    <input type="text" name="name" placeholder="Nume si prenume" required> <br>
-                    <label for="email">Email <span>*</span></label>
-                    <input type="email" name="email" placeholder="email" name="" id="" required> <br>
-                    <label for="tel">Nr telefon <span>*</span></label>
-                    <input type="tel" name="tel"  placeholder="numar de telefon" name="" id="" required> <br>
-                    <label for="message">Mesaj</label>
-                    <textarea name="message" placeholder="mesaj" id="" cols="30" rows="7"></textarea>
-                    
-                </div>
-            </div>
-            
-            <div class="summary centered">
-                <h2>Sumar Rezervare</h2>
-                <div>Pret Inchiriere <span id="trip-price">0€</span></div>
-                <div>Taxa spalare Auto <span>15€</span></div>
-                <div>Garantie <span id="warranty">200€</span></div>
-                <div><input type="checkbox" name="assurance" id="assurance-check" onchange="updateTotal();">  <label for="assurance">asigurare facultativa <i class="fa-solid fa-circle-info"></i><span id="assurance">40€</span> </label></div>
-                <div class="total-price"> PRET TOTAL <span id="final-price">0€</span></div>
-               
-            </div>
-
-            <div class="accord centered">
-                <input type="checkbox" required name="accord" id="" oninvalid="this.setCustomValidity('Pentru a face rezervarea trebuie sa acceptati Termenii si Conditiile')" oninput="setCustomValidity('')"> 
-                <label for="accord">Sunt de acord cu Termenii si Conditiile </label>
-            </div>
-            <input type="submit" value="Trimite Rezervarea" class="submit-btn" >
-
-
-
-        </form>
-       <div class="reservation-other">
-        <p>* Predarea si preluarea autoturismelor se face de la Aeroportul International Cluj-Napoca, de luni pana duminica, in intervalul orar 09-18. </p>
-        <p>* Plata cu CARD-ul se poate face fara probleme daca aveti un CARD Visa sau Mastercard si este pe numele dvs.</p>
-       </div>
-        
-    </section>
-   
     <a href="#"><i class="fa-solid fa-circle-up to-top"></i></a>
-      
+   
     <footer>
         <div class="container">
             <div class="upper-footer">

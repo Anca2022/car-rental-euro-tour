@@ -522,6 +522,14 @@ header .container .display-menu ul li .current:hover {
   padding-bottom: 0.7rem;
 }
 
+.succes {
+  height: 100vh;
+}
+.succes p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 .to-top {
   position: fixed;
   bottom: 1rem;
@@ -710,6 +718,9 @@ footer .container .lower-footer {
   .reservation-page .reservation .personal-info input {
     width: 220px;
   }
+  .succes p {
+    text-align: left;
+  }
   footer .container {
     text-align: left;
   }
@@ -855,6 +866,9 @@ footer .container .lower-footer {
     max-width: unset;
     width: 700px;
     padding: 1.5rem 6rem;
+  }
+  .succes p {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 1440px) {
