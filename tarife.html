@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
     <header>
         <div class="container">
             <div class="left-side-header">
@@ -31,8 +32,8 @@
                 <nav class="navbar">
                     <ul>
                         <li><a href="index.html">Acasa</a></li>
-                        <li><a class="current" href="#">Flota</a></li>
-                        <li><a href="tarife.html">Tarife</a></li>
+                        <li><a href="template-masina.html">Flota</a></li>
+                        <li><a class="current" href="#">Tarife</a></li>
                         <li><a href="rezervari.html">Rezervari</a></li>
                         <li><a href="#">Conditii</a></li>
                         <li><a href="#">Contact</a></li>
@@ -42,80 +43,82 @@
         </div>
     </header>
     
-    <section class="container first car-page ">
-        <h1 class="title">Opel Corsa 1.4i</h1>
-        <div class="particular-car">
-            <div class="car-photo">
-                <div class="min-price">de la <br><span>18€</span> <br>/zi</div>
-                <img src="img/opel-corsa-1-4-i-265.jpg" alt="opel corsa 1.4i">
-              
-            </div>            
-            <div class="car-specs">
-                <div class="specs">
-                    <h3>Specificatii</h3>
-                    <ul>
-                        <li>Motorizare: <span>Turbo Benzina, 110cp</span></li>
-                        <li>Cutie de viteze: <span>Manuala</span></li>
-                        <li>Consum mediu: <span>5.3 l / 100km</span></li>
-                        <li>Volum portbagaj: <span>355 l</span></li>
-                        <li>Capacitate rezervor: <span>40 l</span></li>
-                        <li>Categorie: <span>Hatchback</span></li>
-                    </ul>
-                </div>
-                <div class="car-equipment">
-                    <h3 >Dotari</h3>
-                    <ul>
-                        <div>
-                            <li>Aer Conditionat/ Climadivonic</li>
-                            <li>Front Assist, Lane Assist</li>
-                            <li>Bluetooth</li>
-                            <li>Radio Touchscreen</li>
-                            <li>USB-C</li>
-                            <li>SD-Card</li>
-                        </div>
-                    
-                        <div>
-                            <li>ABS</li>
-                            <li>ESP</li>
-                            <li>Scaune Isofix</li>
-                            <li>8 Airbag-uri</li>
-                            <li>Volan Piele Multifunctional</li>
-                            <li>Lumini de zi - LED</li>
-                        </div>
-                    </ul>
-                </div>                     
-            </div>
-            <div class="price-days-div">
-                <h3>Tarife in functie de numarul de zile</h3>
-                <div class="price-days">
-                    <div>
-                        <span class="price-days-title">Nr zile</span>
-                        <span>1-3</span>
-                        <span>4-7</span>
-                        <span>8-21</span>
-                        <span>>21</span>
-                    </div>
-                    <div>
-                        <span class="price-days-title">Pret / zi</span>
-                        <span>26€</span>
-                        <span>24€</span>
-                        <span>20€</span>
-                        <span>18€</span>
-                    </div>  
-                </div>
-            </div>
-            <div class="price-total">
-                <p>Tarifele sunt exprimate in EURO/zi si includ: TVA, ROVINETA, R.C.A, ASIGURARE CASCO.</p>
-                <p>Garantie !!! bla bla</p>
-                <p>Tarifele nu includ: combustibil, costurile de parcare, amenzi de circulatie.</p>
-            </div>
+    
+    <section class="container first price-page">
+        <div class="price-text">
+            <h1 class="title">Tarife Inchiriere Auto</h1>
+            <p>Tarifele sunt exprimate in EURO/zi si includ: TVA, R.C.A, ROVINIETA, ASIGURARE CASCO, ANVELOPE DE IARNA.</p>
+            <p>Tarifele nu includ: combustibil, costurile de parcare, amenzi de circulatie, scaun auto pentru copii.</p>
+            <p>Garantie !!! bla bla</p>
+            <p class="pay">Acceptam plata cu: ? ? 
+                numai cu carduri de credit? 
+            </p>
+           // Asigurare SCDW BONUS<i class="fa-solid fa-circle-info"></i> <i class="fa-regular fa-circle-question"></i>
         </div>
-        
-        <button class="reserve-btn" type="button">Rezerva</button>
+        <div class="price-table">
+            <div class="header-row">
+                <span>3 zile</span>
+                <span>7 zile</span>
+                <span>21 zile</span>
+                <span>>21 zile</span>
+                <span>Garantie</span>
+                <span>SCDW <i class="fa-solid fa-circle-info"></i></span>
+            </div>
+                    
+            <div class="row">
+                    <span class="car-name">Opel Corsa 1.4i</span>
+                    <span>26€</span>
+                    <span>24€</span>
+                    <span>20€</span>
+                    <span>18€</span>
+                    <span>200€</span>
+                    <span>40€</span>
+                    <button class="reserve-btn" type="button" >Rezerva</button>
+            </div>        
+                
+            <div class="row">
+                <span class="car-name">Opel Corsa 1.4i</span>
+                <span>26€</span>
+                <span>24€</span>
+                <span>20€</span>
+                <span>18€</span>
+                <span>200€</span>
+                <span>40€</span>
+                <button class="reserve-btn" type="button" >Rezerva</button>
+            </div>
+
+            <div class="row">
+                <span class="car-name">Opel Corsa 1.4i</span>
+                <span>26€</span>
+                <span>24€</span>
+                <span>20€</span>
+                <span>18€</span>
+                <span>200€</span>
+                <span>40€</span>
+                <button class="reserve-btn" type="button" >Rezerva</button>
+            </div>
+
+            <div class="row">
+                <span class="car-name">Opel Corsa 1.4i</span>
+                <span>26€</span>
+                <span>24€</span>
+                <span>20€</span>
+                <span>18€</span>
+                <span>200€</span>
+                <span>40€</span>
+                <button class="reserve-btn" type="button" >Rezerva</button>
+        </div>   
+
+        </div>
     </section>
+
+    
+       
+  
 
     <a href="#"><i class="fa-solid fa-circle-up to-top"></i></a>
       
+    
     <footer>
         <div class="container">
             <div class="upper-footer">
@@ -139,7 +142,7 @@
                         </ul>
                     </div> 
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.268370504193!2d23.607503175487977!3d46.77931597112597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c1bd7e08db5%3A0x3704c6db965549e9!2sSdivada%20Cioc%C3%A2rliei%206%2C%20Cluj-Napoca%20400394!5e0!3m2!1sro!2sro!4v1697652831740!5m2!1sro!2sro" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.268370504193!2d23.607503175487977!3d46.77931597112597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c1bd7e08db5%3A0x3704c6db965549e9!2sStrada%20Cioc%C3%A2rliei%206%2C%20Cluj-Napoca%20400394!5e0!3m2!1sro!2sro!4v1697652831740!5m2!1sro!2sro" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <p class="lower-footer">© 2013 by Euro Tour Car Rental & co.</p>
         </div>

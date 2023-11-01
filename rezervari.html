@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inchirieri masini Cluj - Rent a Car Cluj - Euro Tour Car Rental Cluj-Napoca</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="img/logo-final.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="left-side-header">
+                <i class="fa-solid fa-bars mobile-menu"></i>
+                <i class="fa-solid fa-xmark close-menu"></i>
+                <img class="logo" src="img/logo-final.svg">
+            </div>    
+            <div class="right-side-header">
+                <div class="upper-nav">
+                    <p><a href="tel://+40 (755) 934 953"><i class="fa-solid fa-phone"></i> <span class="contact-no"> +40 766 540 549</span></a></p>
+                    <div class="language">
+                        <img src="img/romania-flag.png" alt="romanian flag"> <span>RO</span> <i class="fa-solid fa-caret-down"></i>
+                        <div class="other-language">
+                            <div><img src="img/romania-flag.png" alt="romanian flag"> <a href="#">RO</a></div> 
+                            <div><img src="img/united-kingdom-flag.png" alt="UK flag"> <a href="home.html">EN</a></div>
+                        </div>    
+                    </div>
+                </div> 
+                
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Acasa</a></li>
+                        <li><a href="template-masina.html">Flota</a></li>
+                        <li><a href="tarife.html">Tarife</a></li>
+                        <li><a class="current" href="#">Rezervari</a></li>
+                        <li><a href="#">Conditii</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav> 
+            </div>
+        </div>
+    </header>
+    
+    <section class="first container reservation-page">
+        <h1 class="title">Rezervare masina</h1>
+        <p class="reservation-info">Pentru rezervari, va rugam sa sunati la numarul de telefon bla-bla, sau sa completati formularul de mai jos. </p>
+        
+        <form action="" >
+            <div class="reservation centered">
+                <div class="car-select">
+                    <h2>Selecteaza masina</h2>
+                    <select name="" id="chosen-car" required onchange="carSelect();">
+                        <option value="opel-corsa-1-4-i">Opel Corsa 1.4i</option>
+                        <option value="chevrolet-spark-0-8-i">Chevrolet Spark 0.8i</option>
+                        <option value="vw-passat-2-0-tdi">VW Passat 2.0 TDI</option>
+                    </select>
+                    <p class="reservation-price"><span id="no-days">0</span> zile - <span id="price-per-day">26</span> €/zi</p>
+
+                    <div class="reservation-img">
+                      <img src="img/opel-corsa-1-4-i-265.jpg" alt="Chosen car">
+                    </div>
+                </div>
+        
+                <div class="date-select">
+                    <h2>Alege Datele</h2>
+                    <div class="pick-up-date centered">
+                        <p>Data preluare</p>
+                        <input type="date" name="pick-up-date" id="pick-up" required>
+                    </div>
+                    <div class="dropoff-date centered">
+                        <p>Data predare</p>
+                        <input type="date" name="dropoff-date" id="dropoff" required>
+                    </div>
+                </div>
+        
+                <div class="personal-info">
+                    <h2>Date personale</h2>
+                    <label for="name">Nume <span>*</span></label>
+                    <input type="text" name="name" placeholder="Nume si prenume" required> <br>
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" name="email" placeholder="email" name="" id="" required> <br>
+                    <label for="tel">Nr telefon <span>*</span></label>
+                    <input type="tel" name="tel"  placeholder="numar de telefon" name="" id="" required> <br>
+                    <label for="message">Mesaj</label>
+                    <textarea name="message" placeholder="mesaj" id="" cols="30" rows="7"></textarea>
+                    
+                </div>
+            </div>
+            
+            <div class="summary centered">
+                <h2>Sumar Rezervare</h2>
+                <div>Pret Inchiriere <span id="trip-price">0€</span></div>
+                <div>Taxa spalare Auto <span>15€</span></div>
+                <div>Garantie <span id="warranty">200€</span></div>
+                <div><input type="checkbox" name="scdw" id="assurance-check" onchange="updateTotal();">  <label for="scdw">asigurare facultativa <i class="fa-solid fa-circle-info"></i><span id="assurance">40€</span> </label></div>
+                <div class="total-price"> PRET TOTAL <span id="final-price">0€</span></div>
+               
+            </div>
+
+            <div class="accord centered">
+                <input type="checkbox" required name="accord" id="" oninvalid="this.setCustomValidity('Pentru a face rezervarea trebuie sa acceptati Termenii si Conditiile')" oninput="setCustomValidity('')"> 
+                <label for="accord">Sunt de acord cu Termenii si Conditiile </label>
+            </div>
+            <input type="submit" value="Trimite Rezervarea" class="submit-btn" >
+
+
+
+        </form>
+       <div class="reservation-other">
+        <p>* Predarea si preluarea autoturismelor se face de la Aeroportul International Cluj-Napoca, de luni pana duminica, in intervalul orar 09-18. </p>
+        <p>* Plata cu CARD-ul se poate face fara probleme daca aveti un CARD Visa sau Mastercard si este pe numele dvs.</p>
+       </div>
+        
+    </section>
+   
+    <a href="#"><i class="fa-solid fa-circle-up to-top"></i></a>
+      
+    <footer>
+        <div class="container">
+            <div class="upper-footer">
+                <div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i>Str. Ciocarliei nr. 6, Cluj-Napoca, Romania</li>
+                            <li><i class="fa-solid fa-phone"></i>0040766540549</li>
+                            <li><a href="mailto:office@euro-tour.com"> <i class="fa-solid fa-envelope"></i>office@euro-tour.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-info">
+                        <h3>Info utile</h3>
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-angle-right"></i>Locatii de livrare</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right"></i>Tarife</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right"></i>Intrebari frecvente</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right"></i>Politica de confidentialitate</a></li>
+                            <li><a href="conditii.html"><i class="fa-solid fa-angle-right"></i>Termeni si conditii</a></li>
+                        </ul>
+                    </div> 
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.268370504193!2d23.607503175487977!3d46.77931597112597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c1bd7e08db5%3A0x3704c6db965549e9!2sStrada%20Cioc%C3%A2rliei%206%2C%20Cluj-Napoca%20400394!5e0!3m2!1sro!2sro!4v1697652831740!5m2!1sro!2sro" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p class="lower-footer">© 2013 by Euro Tour Car Rental & co.</p>
+        </div>
+    </footer>
+          
+    <script src="main.js"></script>
+</body>
+</html>
