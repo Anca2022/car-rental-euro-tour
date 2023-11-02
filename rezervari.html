@@ -23,8 +23,8 @@
                     <div class="language">
                         <img src="img/romania-flag.png" alt="romanian flag"> <span>RO</span> <i class="fa-solid fa-caret-down"></i>
                         <div class="other-language">
-                            <div><img src="img/romania-flag.png" alt="romanian flag"> <a href="#">RO</a></div> 
-                            <div><img src="img/united-kingdom-flag.png" alt="UK flag"> <a href="home.html">EN</a></div>
+                            <div><a href="#"><img src="img/romania-flag.png" alt="romanian flag"><span>RO</span></a></div> 
+                            <div><a href="home.html"><img src="img/united-kingdom-flag.png" alt="UK flag"><span>EN</span></a></div>
                         </div>    
                     </div>
                 </div> 
@@ -98,7 +98,7 @@
                 <div>Pret Inchiriere <span id="trip-price">0€</span></div>
                 <div>Taxa spalare Auto <span>15€</span></div>
                 <div>Garantie <span id="warranty">200€</span></div>
-                <div><input type="checkbox" name="assurance" id="assurance-check" onchange="updateTotal();">  <label for="assurance">asigurare facultativa <i class="fa-solid fa-circle-info"></i><span id="assurance">40€</span> </label></div>
+                <div class="show-scdw"><input type="checkbox" name="assurance" id="assurance-check" onchange="updateTotal();">  <label for="assurance">asigurare facultativa <i class="fa-solid fa-circle-info"></i><span class="bonus">Asigurarea SCDW va acopera in caz de accidente, inclusiv din cauza dumneavoastra, si intra in pretul de inchiriere, caz in care nu mai e nevoie de plata garantiei</span><span id="assurance">40€</span> </label></div>
                 <div class="total-price"> PRET TOTAL <span id="final-price">0€</span></div>
                
             </div>
@@ -151,5 +151,6 @@
     </footer>
           
     <script src="main.js"></script>
+    <script src="reservation.js"></script>
 </body>
 </html>

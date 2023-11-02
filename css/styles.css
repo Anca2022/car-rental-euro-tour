@@ -1,7 +1,5 @@
 /*TO DO 
-pt mobil - apelare nr telefon 
-padding cerc
-
+//+ sa apeleze nr de telefon in mobile - mutat din rezerevari in toate! 
 
 */
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
@@ -109,6 +107,7 @@ header .container .upper-nav .contact-no {
 header .container .upper-nav .language {
   position: relative;
   display: inline-block;
+  height: 1.5rem;
 }
 header .container .upper-nav .language img {
   width: 1.5rem;
@@ -139,6 +138,7 @@ header .container .upper-nav .display-languages div {
 }
 header .container .upper-nav .display-languages div img {
   height: 17px;
+  margin-right: 10px;
 }
 header .container .upper-nav .display-languages div a {
   font-weight: bold;
@@ -191,6 +191,11 @@ header .container .display-menu ul li .current:hover {
 
 .centered {
   margin: 0 auto;
+}
+
+.main-page p {
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .fleet .cars {
@@ -332,13 +337,19 @@ header .container .display-menu ul li .current:hover {
 }
 .car-page .reserve-btn {
   display: block;
-  margin: 1.5rem 0;
-  margin-left: auto;
-  margin-right: auto;
+  width: unset;
+  padding: 1rem 2rem;
+  margin: 3rem auto 2rem auto;
+  cursor: pointer;
+}
+.car-page .reserve-btn a {
+  color: black;
+  font-size: 1.3rem;
 }
 
 .price-page .price-text p {
-  padding-bottom: 1.3rem;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
 }
 .price-page .price-table {
   margin: 3rem auto 2rem auto;
@@ -358,6 +369,20 @@ header .container .display-menu ul li .current:hover {
 }
 .price-page .price-table .header-row span {
   flex-basis: 15%;
+  position: relative;
+}
+.price-page .price-table .header-row span .bonus {
+  display: none;
+}
+.price-page .price-table .header-row span .display-bonus {
+  display: block;
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: 250px;
+  padding: 0.5rem;
+  border-radius: 3px;
+  box-shadow: 1px 0px 10px darkgrey;
 }
 .price-page .price-table .row {
   width: 1050px;
@@ -431,15 +456,6 @@ header .container .display-menu ul li .current:hover {
 .reservation-page .reservation .date-select {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*     p.reservation-price{
-           grid-column: 1/3;
-           font-size:1.3rem;
-           padding: 1rem;
-           margin-bottom:0.8rem;
-           background-color: var(--dark);
-           color: var(--bg);
-           border-radius:5rem;
-       } */
 }
 .reservation-page .reservation .date-select h2 {
   grid-column: 1/3;
@@ -489,6 +505,25 @@ header .container .display-menu ul li .current:hover {
   font-weight: bold;
   float: right;
 }
+.reservation-page .summary div.show-scdw {
+  position: relative;
+}
+.reservation-page .summary div.show-scdw .bonus {
+  display: none;
+}
+.reservation-page .summary div.show-scdw .display-bonus {
+  display: block;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  width: 250px;
+  padding: 0.5rem;
+  border-radius: 3px;
+  box-shadow: 1px 0px 10px rgb(94, 94, 94);
+}
 .reservation-page .summary .total-price {
   border-top: 2px solid rgba(238, 252, 250, 0.3);
   padding-top: 1.5rem;
@@ -504,18 +539,21 @@ header .container .display-menu ul li .current:hover {
   padding-top: 2rem;
 }
 .reservation-page .submit-btn {
+  cursor: pointer;
   display: block;
-  margin: 2rem auto;
-  padding: 0.7rem 1.2rem;
+  margin: 2rem auto 3rem auto;
+  padding: 1rem 1.6rem;
   background-color: var(--accent1-dark);
   border: transparent;
   border-radius: 1rem;
+  box-shadow: 2px 1px 4px #c2b49e;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: rgb(40, 40, 40);
 }
 .reservation-page .submit-btn:hover {
   background-color: var(--accent1);
+  box-shadow: 3px 2px 5px #c2b49e;
 }
 .reservation-page .reservation-other p {
   font-size: 0.8rem;
@@ -626,6 +664,7 @@ footer .container .lower-footer {
   header .container .right-side-header .navbar a {
     color: var(--dark);
     font-weight: bold;
+    font-size: 1.1rem;
     letter-spacing: 0.4px;
     padding-bottom: 2px;
   }
@@ -643,6 +682,9 @@ footer .container .lower-footer {
   }
   .title {
     text-align: left;
+  }
+  .main-page p {
+    font-size: 1.1rem;
   }
   .car-page .particular-car {
     flex-direction: row;
@@ -689,6 +731,9 @@ footer .container .lower-footer {
     border-radius: 2rem 5rem;
     margin-bottom: 1.7rem;
   }
+  .price-page .price-text p {
+    font-size: 1rem;
+  }
   .reservation-page .reservation {
     max-width: unset;
     display: grid;
@@ -718,6 +763,11 @@ footer .container .lower-footer {
   .reservation-page .reservation .personal-info input {
     width: 220px;
   }
+  .reservation-page .summary div.show-scdw .display-bonus {
+    left: 150px;
+    top: 1.5rem;
+    width: 270px;
+  }
   .succes p {
     text-align: left;
   }
@@ -745,18 +795,21 @@ footer .container .lower-footer {
   .container {
     max-width: 1100px;
   }
-  header .right-side-header {
-    flex-basis: 50%;
+  header .container .right-side-header {
+    flex-basis: 60%;
   }
-  header .right-side-header .upper-nav .contact-no {
+  header .container .right-side-header .upper-nav .contact-no {
     font-size: 1.15rem;
   }
-  header .right-side-header .navbar a {
+  header .container .right-side-header .navbar a {
     font-size: 1.2rem;
   }
   .title {
     font-size: 2rem;
     padding: 1rem 0 2rem 0;
+  }
+  .main-page p {
+    font-size: 1.2rem;
   }
   .fleet .cars .car {
     margin-bottom: 2rem;
@@ -824,10 +877,11 @@ footer .container .lower-footer {
   .car-page .particular-car .price-total p {
     font-size: 1.2rem;
   }
-  .car-page .reserve-btn {
-    width: 150px;
+  .car-page .reserve-btn a {
     font-size: 1.5rem;
-    letter-spacing: 0.1rem;
+  }
+  .price-page .price-text p {
+    font-size: 1.2rem;
   }
   .reservation-page .reservation .car-select select {
     margin: 1rem;
@@ -858,14 +912,17 @@ footer .container .lower-footer {
     font-size: 1.2rem;
     line-height: 40px;
   }
-  .reservation-page .reservation-other p {
-    font-size: 0.9rem;
-    padding-bottom: 0.7rem;
-  }
   .reservation-page .summary {
     max-width: unset;
     width: 700px;
     padding: 1.5rem 6rem;
+  }
+  .reservation-page .submit-btn {
+    font-size: 1.5rem;
+  }
+  .reservation-page .reservation-other p {
+    font-size: 0.9rem;
+    padding-bottom: 0.7rem;
   }
   .succes p {
     font-size: 1.4rem;
@@ -899,6 +956,9 @@ footer .container .lower-footer {
   .car-page .particular-car .car-specs .specs, .car-page .particular-car .car-specs .car-equipment {
     width: 480px;
   }
+  .price-page {
+    max-width: 1100px;
+  }
   .reservation-page .reservation .car-select .reservation-img img {
     width: 450px;
     padding-top: 2.5rem;
@@ -919,11 +979,11 @@ footer .container .lower-footer {
     padding: 2.5rem 7rem 1.5rem 7rem;
     font-size: 1.2rem;
   }
+  .reservation-page .summary div.show-scdw .display-bonus {
+    font-size: 1rem;
+  }
   .reservation-page .accord {
     font-size: 1.1rem;
-  }
-  .reservation-page .submit-btn {
-    font-size: 1.4rem;
   }
   .reservation-page .reservation-other p {
     font-size: 1rem;
