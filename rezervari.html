@@ -15,7 +15,7 @@
             <div class="left-side-header">
                 <i class="fa-solid fa-bars mobile-menu"></i>
                 <i class="fa-solid fa-xmark close-menu"></i>
-                <img class="logo" src="img/logo-final.svg">
+                <a href="index.html"><img class="logo" src="img/logo-final.svg"></a>
             </div>    
             <div class="right-side-header">
                 <div class="upper-nav">
@@ -42,8 +42,9 @@
             </div>
         </div>
     </header>
-    
-    <section class="first container reservation-page">
+    <section class="first">
+    </section>
+    <section class="container reservation-page">
         <h1 class="title">Rezervare masina</h1>
         <p class="reservation-info">Pentru rezervari, va rugam sa sunati la numarul de telefon bla-bla, sau sa completati formularul de mai jos. </p>
         
@@ -71,7 +72,7 @@
                     <h2>Alege Datele</h2>
                     <div class="pick-up-date centered">
                         <p>Data preluare</p>
-                        <input type="date" name="pick&nbsp;up&nbsp;date" id="pick-up" required>
+                        <input type="date" name="pick&nbsp;up&nbsp;date" id="pick-up" required >
                     </div>
                     <div class="dropoff-date centered">
                         <p>Data predare</p>
@@ -82,13 +83,13 @@
                 <div class="personal-info">
                     <h2>Date personale</h2>
                     <label for="name">Nume <span>*</span></label>
-                    <input type="text" name="name" placeholder="Nume si prenume" required> <br>
+                    <input type="text" name="name" placeholder="Nume si prenume" required oninvalid="this.setCustomValidity('Va rugam sa completati numele si prenumele dumneavoastra')" oninput="setCustomValidity('')"> <br>
                     <label for="email">Email <span>*</span></label>
-                    <input type="email" name="email" placeholder="email" name="" id="" required> <br>
+                    <input type="email" name="email" placeholder="Adresa email" name="" id="" required oninvalid="this.setCustomValidity('Va rugam sa completati adresa de email')" oninput="setCustomValidity('')"> <br>
                     <label for="tel">Nr telefon <span>*</span></label>
-                    <input type="tel" name="tel"  placeholder="numar de telefon" name="" id="" required> <br>
+                    <input type="tel" name="tel" placeholder="Numar de telefon" name="" id="" required oninvalid="this.setCustomValidity('Va rugam sa completati numarul de telefon')" oninput="setCustomValidity('')"> <br>
                     <label for="message">Mesaj</label>
-                    <textarea name="message" placeholder="mesaj" id="" cols="30" rows="7"></textarea>
+                    <textarea name="message" placeholder="Informatii suplimentare" id="" cols="30" rows="7"></textarea>
                     
                 </div>
             </div>
@@ -129,15 +130,16 @@
                         <h3>Contact</h3>
                         <ul>
                             <li><i class="fa-solid fa-location-dot"></i>Str. Ciocarliei nr. 6, Cluj-Napoca, Romania</li>
-                            <li><i class="fa-solid fa-phone"></i>0040766540549</li>
+                            <li><a href="tel://+40 (755) 934 953"><i class="fa-solid fa-phone"></i>0040766540549</a></li>
                             <li><a href="mailto:office@euro-tour.com"> <i class="fa-solid fa-envelope"></i>office@euro-tour.com</a></li>
+                                                        <li><i class="fa-regular fa-calendar-days"></i>Luni-Duminica: 09:00-18:00</li>
                         </ul>
                     </div>
                     <div class="footer-info">
                         <h3>Info utile</h3>
                         <ul>
                             <li><a href="#"><i class="fa-solid fa-angle-right"></i>Locatii de livrare</a></li>
-                            <li><a href="#"><i class="fa-solid fa-angle-right"></i>Tarife</a></li>
+                            <li><a href="tarife.html"><i class="fa-solid fa-angle-right"></i>Tarife</a></li>
                             <li><a href="#"><i class="fa-solid fa-angle-right"></i>Intrebari frecvente</a></li>
                             <li><a href="#"><i class="fa-solid fa-angle-right"></i>Politica de confidentialitate</a></li>
                             <li><a href="conditii.html"><i class="fa-solid fa-angle-right"></i>Termeni si conditii</a></li>

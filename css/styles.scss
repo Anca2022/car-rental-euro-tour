@@ -1,6 +1,6 @@
 /*TO DO 
-//+ sa apeleze nr de telefon in mobile - mutat din rezerevari in toate! 
-
+input tel - numar!! - pattern="[0-9]{4} [0-9]{3} [0-9]{3}"
+verificat daca merg inputurile modificate, pe server
 */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 :root {
@@ -10,15 +10,12 @@
     --accent1:  rgb(242, 172, 67);
     --accent1-dark:rgb(231, 139, 0);
     --accent2: #52c3c3;
-    --bg: #effcfa;
+    --bg:#d1efea;//#c7e6e2; // #effcfa;
 }
 *, *::before, *::after{
     box-sizing: border-box;
     margin:0; 
     padding:0;
-}
-body{
-    background-color: var(--bg); 
 }
 ul{
     list-style-type: none;
@@ -50,6 +47,7 @@ header{
     position:fixed;
     z-index:99;
     background-color: white;
+    box-shadow: 1px 0px 5px darkgrey;
     .container{
         padding-bottom:0.5rem;
         display: flex;
@@ -164,7 +162,7 @@ header{
                         border-bottom:2px solid var(--light);
                         &:hover{
                             border-bottom:2px solid var(--accent1);
-                        }
+                        } 
                     }
                 }
             }
@@ -364,7 +362,7 @@ header{
     }
     .price-table{
         margin: 3rem auto 2rem auto;
-        font-size:1.1rem;
+        font-size:1.2rem;
         overflow-x: auto;
         .header-row{
             width:1050px;
@@ -372,7 +370,7 @@ header{
             background-color: rgba(29, 86, 86, 0.3);
             border-bottom: 2px solid black;
             font-weight:bold;
-            font-size:1.2rem;
+            font-size:1.3rem;
             height: 4rem;
             padding: 1.5rem 100px 1rem 270px;
             display: flex;
@@ -387,6 +385,8 @@ header{
                     position: absolute;
                     background-color: white;
                     color: black;
+                    font-weight: normal;
+                    font-size: 0.95rem;
                     width: 250px;
                     padding: 0.5rem; 
                     border-radius:3px;
@@ -400,13 +400,12 @@ header{
             padding: 0.9rem 0.5rem;
             border-bottom: 1px solid black;
             height:60px;
-            //display:flex;
             span{
                 display: inline-block;
                 width: 100px;
              }
             span.car-name{
-                
+                font-size: 1.3rem;
                 width:265px;
             }
             .reserve-btn{
@@ -427,7 +426,13 @@ header{
 }    
 
 .reservation-page{
-    //color:rgb(23, 68, 68);
+    input, select, textarea{
+        border-radius: 5px;
+        border: 1px solid rgb(209, 209, 209);
+    }
+    select, input[type='date']{
+        padding:0.3rem;
+    }
     .reservation-info{
         font-size:1.3rem;
         padding-bottom:1.5rem;
@@ -446,7 +451,7 @@ header{
                 color:rgb(23, 68, 68); //var(--dark);//var(--bg);
                 background-color: var(--accent2);
                 border-radius:10px;
-                padding:0.5rem;
+                padding:0.5rem 0.5rem 0.5rem 1rem;
                 margin:-0.5rem;
                 margin-bottom: 0.5rem;
             }
@@ -559,6 +564,7 @@ header{
     .accord{
         max-width: 500px;
         padding-top: 2rem;
+        padding-left:1rem;
     }
     .submit-btn{
         cursor: pointer;
@@ -658,21 +664,26 @@ footer{
                  .logo{
                      width: 9rem;
                  }
-             }
-                 
+                 .contract-logo{
+                    width: 6rem;
+                 }
+             }  
              .right-side-header{
                  flex-basis:60%;
                  display:flex;
                  flex-direction:column;
                  justify-content: space-between;
-                 .upper-nav {
+                .upper-nav {
                      text-align: right;
-                     .contact-no{
+                    .contact-no{
                          display:inline;
                          font-weight: bold;
                          margin-right: 1rem;
-                     }
+                     }                     
                  }
+                 .contract-nav{
+                        display: none;
+                    }
                  .navbar{
                      display:block;
                      ul{
@@ -705,7 +716,6 @@ footer{
                  }
              }
         }
-       
     }
     .first{
         padding-top:7rem;
@@ -770,7 +780,7 @@ footer{
     }
     .price-page{
         .price-text p{
-                font-size: 1rem;
+                font-size: 1.1rem;
         }
     }
     .reservation-page{
@@ -961,19 +971,22 @@ footer{
         }
     }
     .reservation-page{
+        input[type='date']{
+            font-size:1rem;
+        }
         .reservation{ 
             .car-select{
                 select{
-                    margin: 1rem;
+                    margin: 1.3rem 0 0 0.5rem;
                     font-size: 1rem;
                 }
                 p.reservation-price{
-                    margin: 1rem;
+                    margin: 1rem 0.5rem 0 0 ;
                     font-weight: bold;
                 }
                 .reservation-img img{
                     width:400px;
-                    padding-top:2rem;
+                    padding-top:3rem;
                 }
             }
             .date-select{
@@ -1001,6 +1014,10 @@ footer{
             width: 700px;  
             padding: 1.5rem 6rem;
         }
+        .accord{
+            max-width:700px;
+            padding-left:6rem;
+        }
         .submit-btn{
             font-size:1.5rem;
         }
@@ -1014,6 +1031,21 @@ footer{
     .succes {
         p{ 
             font-size:1.4rem; 
+        }
+    }
+    .to-top{
+        bottom: 1.5rem;
+        right: 2rem;
+        font-size:2.3rem;
+    }
+    footer{
+        .container{
+            .upper-footer{
+                iframe{
+                    width:500px;
+                    height: 330px;
+                }
+            }
         }
     }
 }
@@ -1064,22 +1096,16 @@ footer{
             .car-select{
                 .reservation-img img{
                     width:450px;
-                    padding-top:2.5rem;
+                    padding-top:3rem;
                 }
             }
             .personal-info{
-                padding: 2rem;
-                h2{
-                    margin: -2rem;
-                    margin-bottom:1rem;
-                }
                 input{ 
                     width: 250px;
                 }
             }
         }
         .summary{
-            max-width: unset;
             width: 800px;  
             padding: 2.5rem 7rem 1.5rem 7rem;
             font-size:1.2rem;
@@ -1091,13 +1117,15 @@ footer{
         }
         .accord{
             font-size:1.1rem;
+            max-width: 800px;  
+            padding-left:7rem;
         }
         .reservation-other{
             p{ font-size: 1rem;}
         }
     }
     footer{
-           .container{
+        .container{
             .upper-footer>div{
                 display:flex;
                 flex-direction: row;
@@ -1105,9 +1133,16 @@ footer{
                 justify-content: space-between; 
                 align-items: center; 
                 .footer-contact{
-                    li{ padding-top: 20px;}
+                    li{ padding-top: 10px;}
+                    margin-bottom: 20px;
+                }
+            }   
+            .upper-footer{
+                iframe{
+                    width:500px;
+                    //height:350px;
                 }
             }
         }
-   }
+    }
 }

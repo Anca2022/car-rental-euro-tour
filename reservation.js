@@ -18,7 +18,7 @@ function updateTotal (){
     }
 }
 
-function priceUpdate() {
+function updatePrice() {
     if(noDays.innerText<=3) {
         priceDay.innerText=cars[n].price1; 
         tripPrice.innerText=noDays.innerText*cars[n].price1 + '€';
@@ -50,7 +50,7 @@ function carSelect() {
     carImg.src=cars[n].img;
     warranty.innerText = cars[n].warranty + '€'; 
     assurance.innerText = cars[n].assurance + '€';
-    priceUpdate(); 
+    updatePrice(); 
 };
 
 //reservation dates
@@ -67,13 +67,16 @@ function date(date, n){
         month='0'+month;
     }
     let year = date.getFullYear();
+    date.setDate(date.getDate() - n);
     return (`${year}-${month}-${day}`);
 }
 
 let pickUpDate = document.getElementById('pick-up');
 pickUpDate.setAttribute('min', date(today,1));
+pickUpDate.value=date(today,1);
 let dropoffDate = document.getElementById('dropoff');
-dropoffDate.setAttribute('min', date(today,1));
+dropoffDate.setAttribute('min', date(today,2));
+dropoffDate.value=date(today,2);
 let first; 
 let second;
 
@@ -81,14 +84,20 @@ function getFirst(){
     first=pickUpDate.value;
     first = new Date(first);
     dropoffDate.setAttribute('min', date(first,1));
-    //update first
+    if ((second.getDate()-first.getDate())>0) {
+        noDays.innerText=second.getDate()-first.getDate();
+    }
+    else{
+        alert ('Ziua returnarii trebuie sa fie dupa ziua inchirierii');
+        ////+ altceva? sa blochez?
+    }
 }
 
 function getSecond(){
     second=dropoffDate.value;
     second=new Date(second);
-    noDays.innerText=second.getDate()-first.getDate()+1;
-    priceUpdate();
+    noDays.innerText=second.getDate()-first.getDate();//+1;
+    updatePrice();
 }
 
 pickUpDate.addEventListener('input', getFirst);
