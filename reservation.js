@@ -28,12 +28,12 @@ function updatePrice() {
         tripPrice.innerText=noDays.innerText*cars[n].price2 + '€';
     }
     else if (noDays.innerText <= 21) {
-        priceDay.innerText=cars[n].price3 + '€';
-        tripPrice.innerText=noDays.innerText*cars[n].price3;
+        priceDay.innerText=cars[n].price3;
+        tripPrice.innerText=noDays.innerText*cars[n].price3 + '€';
     }
     else {
-        priceDay.innerText=cars[n].price4 + '€';
-        tripPrice.innerText=noDays.innerText*cars[n].price4;
+        priceDay.innerText=cars[n].price4;
+        tripPrice.innerText=noDays.innerText*cars[n].price4 + '€';
     }
     updateTotal();
 };
@@ -55,6 +55,8 @@ function carSelect() {
 
 //reservation dates
 const today = new Date();
+let pickUpDate = document.getElementById('pick-up');
+let dropoffDate = document.getElementById('dropoff');
 
 function date(date, n){
     date.setDate(date.getDate() + n);
@@ -71,34 +73,54 @@ function date(date, n){
     return (`${year}-${month}-${day}`);
 }
 
-let pickUpDate = document.getElementById('pick-up');
-pickUpDate.setAttribute('min', date(today,1));
-pickUpDate.value=date(today,1);
-let dropoffDate = document.getElementById('dropoff');
-dropoffDate.setAttribute('min', date(today,2));
-dropoffDate.value=date(today,2);
-let first; 
-let second;
+function getNoDays (){
+    let days = new Date(second-first);
+    
+    function longDate(d){
+        let month=new Date('31-jan-1970');
+        d = new Date(d-month);
+
+        if (d.getMonth()==0) { 
+            return d.getDate();
+        }
+        else if (d.getMonth()>0){
+            return 30 + longDate(d);
+        };
+    };
+    if (days.getFullYear()>1970){
+        alert('Ati depasit perioada maxima de inchiriere! Va rugam sa alegeti o perioada mai scurta.');
+    }
+    if (days.getMonth()==0) {
+        noDays.innerText=days.getDate()-1;
+    }
+    else if (days.getMonth()>0) {
+        noDays.innerText = 29 + longDate(days);
+    };
+}
 
 function getFirst(){
     first=pickUpDate.value;
     first = new Date(first);
     dropoffDate.setAttribute('min', date(first,1));
-    if ((second.getDate()-first.getDate())>0) {
-        noDays.innerText=second.getDate()-first.getDate();
-    }
-    else{
-        alert ('Ziua returnarii trebuie sa fie dupa ziua inchirierii');
-        ////+ altceva? sa blochez?
-    }
+    getNoDays();
+    updatePrice();
 }
 
 function getSecond(){
     second=dropoffDate.value;
     second=new Date(second);
-    noDays.innerText=second.getDate()-first.getDate();//+1;
+   
+    getNoDays();
     updatePrice();
 }
+
+pickUpDate.setAttribute('min', date(today,1));
+pickUpDate.value=date(today,1);
+dropoffDate.setAttribute('min', date(today,2));
+dropoffDate.value=date(today,2);
+
+let first = pickUpDate.value; 
+first = new Date(first);
 
 pickUpDate.addEventListener('input', getFirst);
 dropoffDate.addEventListener('input', getSecond);
@@ -115,11 +137,6 @@ bonusInfo.addEventListener('mouseout', ()=> {
     })
 
 bonusInfo.addEventListener('click', ()=> {
-    if (bonus.classList.contains('display-bonus')) {
-        bonus.classList.remove('display-bonus');
-    }
-    else {
-        bonus.classList.add('display-bonus');
-    }
+    bonus.classList.toggle('display-bonus');
 });
     

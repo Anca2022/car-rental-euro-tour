@@ -160,12 +160,7 @@
         });
 
         bonusInfo.addEventListener('click', ()=> {
-            if (bonus.classList.contains('display-bonus')) {
-                bonus.classList.remove('display-bonus');
-            }
-            else {
-                bonus.classList.add('display-bonus');
-            }
+            bonus.classList.toggle('display-bonus');
         });
     </script>
 </body>
