@@ -664,7 +664,7 @@ header .container .display-menu ul li .current:hover {
   margin-bottom: 10px;
 }
 .questions .question-unit .question {
-  padding: 1rem 0.5rem;
+  padding: 1rem 1.4rem 1rem 0.5rem;
   background-color: var(--accent2);
   color: white;
   font-weight: 500;

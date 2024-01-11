@@ -1,18 +1,23 @@
-// + TO DO: sa iasa din meniu la ESC
 
-// verificat daca merge meniul de limba din mobile 
 //mobile menu
 let menuBtn = document.getElementsByClassName('mobile-menu')[0];
 let exitMenuBtn = document.getElementsByClassName('close-menu')[0];
 let navigation = document.getElementsByClassName('navbar')[0];
-menuBtn.addEventListener('click', ()=> {
+menuBtn.addEventListener('click', openMenu)
+exitMenuBtn.addEventListener('click', closeMenu)
+document.addEventListener('keydown', closeMenu)
+function openMenu(){
     navigation.classList.add('display-menu');
     exitMenuBtn.classList.add('display-exit-btn');
-})
-exitMenuBtn.addEventListener("click", ()=>{
-    navigation.classList.remove('display-menu');
-    exitMenuBtn.classList.remove('display-exit-btn')
-})
+};
+
+function closeMenu(e){
+    if(e.key === 'Escape' || e.pointerType==='touch'){
+        navigation.classList.remove('display-menu');
+        exitMenuBtn.classList.remove('display-exit-btn');
+    }
+    
+}
 
 
 //language menu
