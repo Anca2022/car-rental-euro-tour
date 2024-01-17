@@ -1,4 +1,3 @@
-
 //mobile menu
 let menuBtn = document.getElementsByClassName('mobile-menu')[0];
 let exitMenuBtn = document.getElementsByClassName('close-menu')[0];
