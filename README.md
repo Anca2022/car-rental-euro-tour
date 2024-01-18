@@ -2,9 +2,9 @@
 Welcome to the Euro Tour Car Rental website repository! 
 This project aims to provide a user-friendly platform for a car rental firm based in Cluj-Napoca. The website is designed to showcase the available car fleet, allow users to check specifications, view rental prices based on time intervals, and submit rental requests.
 ## Features
-<b>Multilingual Support</b>: The website is available in both Romanian and English to cater to a broader audience.
-<b>Car Specifications</b>: Users can browse through detailed specifications for each car in the rental fleet.
-<b>Dynamic Pricing</b>: Rental prices are dynamically calculated based on the selected time interval.
+<b>Multilingual Support</b>: The website is available in both Romanian and English to cater to a broader audience. </br>
+<b>Car Specifications</b>: Users can browse through detailed specifications for each car in the rental fleet. </br>
+<b>Dynamic Pricing</b>: Rental prices are dynamically calculated based on the selected time interval. </br>
 <b>Rental Form</b>: An easy-to-use form allows users to submit their desired car model and rental interval.
 ## Preview
 For a sneak peek at the Euro Tour Car Rental website, here are some printscreens of the page:
