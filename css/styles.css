@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
@@ -30,7 +30,7 @@ a {
 
 button {
   background-color: var(--accent1-dark);
-  box-shadow: 2px 1px 4px #c2b49e;
+  box-shadow: 1px 1px 4px #c8c6c1;
   padding: 0.7rem 1.8rem;
   border-radius: 3px;
   width: 120px;
@@ -40,7 +40,7 @@ button {
 }
 button:hover {
   background-color: var(--accent1);
-  box-shadow: 3px 2px 5px #c2b49e;
+  box-shadow: 2px 1px 5px #c2b49e;
 }
 
 .container {
@@ -127,7 +127,7 @@ header .container .upper-nav .display-languages {
   padding: 1rem 0.5rem 0 0.5rem;
   width: 80px;
   border-radius: 3px;
-  box-shadow: 1px 0px 10px darkgrey;
+  box-shadow: 1px 0px 5px darkgrey;
 }
 header .container .upper-nav .display-languages div {
   display: flex;
@@ -229,7 +229,7 @@ header .container .display-menu ul li .current:hover {
 .fleet .cars .car {
   padding: 10px 0 0 5px;
   width: 290px;
-  box-shadow: 2px 2px 15px var(--dark);
+  box-shadow: 2px 2px 7px lightgray; /*var(--dark);*/
   border-radius: 5px;
   margin: 0 auto 3rem auto;
   position: relative;
@@ -290,7 +290,7 @@ header .container .display-menu ul li .current:hover {
 .car-page .particular-car .car-photo {
   position: relative;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px var(--dark);
+  box-shadow: 0px 0px 7px lightgray;
   height: 230px;
 }
 .car-page .particular-car .car-photo .min-price {
@@ -335,11 +335,11 @@ header .container .display-menu ul li .current:hover {
   margin: 0.7rem 0.2rem 5rem 0.2rem;
   width: 100%;
   padding: 1rem 0.5rem 0 0.7rem;
-  box-shadow: 0px 0px 6px var(--dark);
+  box-shadow: 0px 0px 6px lightgray;
   border-radius: 5px;
 }
 .car-page .particular-car .price-days div:first-child {
-  border-bottom: 1.5px solid var(--dark);
+  border-bottom: 1.5px solid lightgray;
   margin-bottom: 1rem;
 }
 .car-page .particular-car .price-days span {
@@ -356,8 +356,8 @@ header .container .display-menu ul li .current:hover {
 .car-page .particular-car .price-total {
   max-width: 500px;
   margin: 0 auto;
-  background-color: var(--accent2);
-  color: black;
+  background-color: rgba(232, 232, 232, 0.5);
+  color: var(--dark);
   border-radius: 5rem 0;
   padding: 4rem 1.5rem;
   text-align: center;
@@ -400,7 +400,7 @@ header .container .display-menu ul li .current:hover {
   font-weight: 600;
   font-size: 1.3rem;
   height: 4rem;
-  padding: 1.5rem 100px 1rem 270px;
+  padding: 1.5rem 100px 1rem 250px;
   display: flex;
 }
 .price-page .price-table .header-row span {
@@ -422,6 +422,9 @@ header .container .display-menu ul li .current:hover {
   border-radius: 3px;
   box-shadow: 1px 0px 10px darkgrey;
 }
+.price-page .price-table .header-row span:last-child {
+  flex-basis: 20%;
+}
 .price-page .price-table .row {
   width: 1050px;
   margin: 0 auto;
@@ -436,7 +439,7 @@ header .container .display-menu ul li .current:hover {
 }
 .price-page .price-table .row span.car-name {
   font-size: 1.3rem;
-  width: 265px;
+  width: 255px;
 }
 .price-page .price-table .row .reserve-btn {
   float: right;
@@ -479,13 +482,13 @@ header .container .display-menu ul li .current:hover {
 }
 .reservation-page .reservation .car-select, .reservation-page .reservation .date-select, .reservation-page .reservation .personal-info {
   background-color: white;
-  border: 1px solid #adadad;
+  border: 1px solid #e5e5e5;
   border-radius: 5px;
   padding: 0.5rem 0.5rem 1.5rem 0.5rem;
 }
 .reservation-page .reservation .car-select h2, .reservation-page .reservation .date-select h2, .reservation-page .reservation .personal-info h2 {
-  color: var(--dark);
-  background-color: var(--accent2);
+  color: black;
+  background-color: rgb(240, 240, 240);
   border-radius: 5px 5px 0 0;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   margin: -0.5rem;
@@ -707,10 +710,10 @@ header .container .display-menu ul li .current:hover {
 
 footer {
   background-color: var(--dark-footer);
-  color: var(--light);
+  color: white;
 }
 footer a {
-  color: var(--light);
+  color: white;
 }
 footer a:hover {
   color: var(--accent1);
@@ -798,13 +801,13 @@ footer .container .lower-footer {
     padding-bottom: 2px;
   }
   header .container .right-side-header .navbar a:hover {
-    color: var(--accent1-dark);
+    color: var(--accent2);
   }
   header .container .right-side-header .navbar .current {
     border-bottom: 2px solid var(--dark);
   }
   header .container .right-side-header .navbar .current:hover {
-    border-bottom: 2px solid var(--accent1-dark);
+    border-bottom: 2px solid var(--accent2);
   }
   .first {
     padding-top: 6rem;
