@@ -77,70 +77,33 @@ header .container .left-side-header .close-menu {
 header .container .left-side-header .display-exit-btn {
   display: block;
   position: fixed;
-  background-color: white;
+  z-index: 3;
+  background-color: var(--dark);
   font-size: 2rem;
   width: 30px;
   color: var(--accent2);
 }
 header .container .left-side-header .logo {
-  width: 6rem;
+  display: none;
 }
 header .container .upper-nav {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
-header .container .upper-nav p {
+header .container .upper-nav .goog-te-gadget {
   display: inline-block;
+  color: transparent !important;
+  margin-bottom: -20px;
 }
-header .container .upper-nav p i {
-  font-size: 1.3rem;
-  margin-right: 0.5rem;
+header .container .upper-nav .goog-te-gadget span > a {
+  display: none;
 }
 header .container .upper-nav a {
   color: black;
+  font-weight: bold;
 }
-header .container .upper-nav .contact-no {
-  color: black;
-  display: none;
-}
-header .container .upper-nav .language {
-  position: relative;
-  display: inline-block;
-  height: 1.5rem;
-}
-header .container .upper-nav .language img {
-  width: 1.5rem;
-  margin-bottom: -3px;
-}
-header .container .upper-nav .language span {
+header .container .upper-nav a i {
   font-size: 1rem;
-  font-weight: bold;
-}
-header .container .upper-nav .other-language {
-  display: none;
-}
-header .container .upper-nav .display-languages {
-  background-color: white;
-  display: block;
-  position: absolute;
-  right: 1px;
-  top: 22px;
-  padding: 1rem 0.5rem 0 0.5rem;
-  width: 80px;
-  border-radius: 3px;
-  box-shadow: 1px 0px 5px darkgrey;
-}
-header .container .upper-nav .display-languages div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-header .container .upper-nav .display-languages div img {
-  height: 17px;
-  margin-right: 10px;
-}
-header .container .upper-nav .display-languages div a {
-  font-weight: bold;
-  color: black;
 }
 header .container .navbar {
   display: none;
@@ -152,7 +115,7 @@ header .container .display-menu {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 4rem;
+  top: 0;
   text-align: center;
 }
 header .container .display-menu ul {
@@ -181,7 +144,6 @@ header .container .display-menu ul li .current:hover {
 }
 
 .title {
-  font-family: "Roboto", sans-serif;
   font-size: 1.9rem;
   font-weight: 500;
   text-align: center;
@@ -762,6 +724,7 @@ footer .container .lower-footer {
     display: none;
   }
   header .container .left-side-header .logo {
+    display: inline-block;
     width: 9rem;
   }
   header .container .left-side-header .contract-logo {
@@ -774,7 +737,10 @@ footer .container .lower-footer {
     justify-content: space-between;
   }
   header .container .right-side-header .upper-nav {
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3%;
   }
   header .container .right-side-header .upper-nav .contact-no {
     display: inline;
