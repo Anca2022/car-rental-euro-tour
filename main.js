@@ -20,22 +20,22 @@ function closeMenu(e){
 
 
 //language menu
-let languageBtn = document.getElementsByClassName('language')[0];
-let languageMenu = document.getElementsByClassName('other-language')[0];
-languageBtn.addEventListener('mouseover', ()=> {
-languageMenu.classList.add('display-languages');
-});
-languageBtn.addEventListener('mouseout', ()=> {
-    languageMenu.classList.remove('display-languages');
-    });
-languageBtn.addEventListener('click', ()=> {
-    if (languageMenu.classList.contains('display-languages')) {
-        languageMenu.classList.remove('display-languages');
-    }
-    else {
-        languageMenu.classList.add('display-languages');
-    }
-});
+// let languageBtn = document.getElementsByClassName('language')[0];
+// let languageMenu = document.getElementsByClassName('other-language')[0];
+// languageBtn.addEventListener('mouseover', ()=> {
+// languageMenu.classList.add('display-languages');
+// });
+// languageBtn.addEventListener('mouseout', ()=> {
+//     languageMenu.classList.remove('display-languages');
+//     });
+// languageBtn.addEventListener('click', ()=> {
+//     if (languageMenu.classList.contains('display-languages')) {
+//         languageMenu.classList.remove('display-languages');
+//     }
+//     else {
+//         languageMenu.classList.add('display-languages');
+//     }
+// });
 
 /// contract nav
 
