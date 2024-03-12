@@ -18,6 +18,11 @@ For a sneak peek at the Euro Tour Car Rental website, here are some printscreens
 
 ## Known Issues (Work in Progress)
 Please note that this website is currently under construction and is not ready for production use. 
+
+<b>Backend Integration:</b> The website currently lacks backend integration, resulting in limited functionality.
+
+<b>Migration to Angular Framework:</b> We are in the process of migrating the website to the Angular framework for improved performance and maintainability.
+
 ## License
 This project is licensed under the MIT License.
 
