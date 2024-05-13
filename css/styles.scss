@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
-//font-family: 'Merriweather Sans', sans-serif;
-//font-family: 'Poppins', sans-serif;
-//font-family: 'Roboto', sans-serif;
 :root {
     --dark:#1a2e35; 
     --dark-footer:rgb(40, 118, 118);
@@ -16,6 +13,9 @@
     box-sizing: border-box;
     margin:0; 
     padding:0;
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -41,10 +41,13 @@ button{
         box-shadow: 2px 1px 5px #c2b49e;
     }
 }
-.container{ 
+.container, .container-nav{ 
     max-width: 1000px;
     margin:0 auto; 
     padding: 1rem;
+}
+.container{
+    animation: transitionIn 0.4s;
 }
 header{
     width:100%;
@@ -52,8 +55,8 @@ header{
     z-index:99;
     background-color: white;
     box-shadow: 1px 0px 5px darkgrey;
-    .container{
-        padding-bottom:0.5rem;
+    .container-nav{
+        padding:0.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -261,6 +264,9 @@ header{
                 display: flex;
                 justify-content: space-between;
                 margin: 2rem 0.5rem;
+                button{
+                    cursor: pointer;
+                }
                 a{
                     color:black;
                 }
@@ -289,22 +295,9 @@ header{
         flex-direction:column;
         align-items: center;
         .car-photo{
-            position: relative;
             border-radius: 5px;
             box-shadow: 0px 0px 7px lightgray;
             height: 230px;
-            .min-price{
-                padding: 1px 5px;
-                top:5px;
-                left:5px;
-                width:63px;
-                height:63px;
-                font-size:0.7rem;
-                line-height: 20px;
-                span{
-                    font-size:1.2rem;
-                }
-            }
             img{
                 padding-top: 20px;
                 width:280px;
@@ -452,6 +445,7 @@ header{
                 margin-top:-0.5rem;
                 margin-right: 1rem;
                 font-size:1.2rem;
+                cursor: pointer;
             }
             &:hover{
                 background-color: rgba(29, 86, 86, 0.15);
@@ -680,6 +674,7 @@ header{
             color: white;
             font-weight: 500;
             position: relative;
+            cursor: pointer;
         }
         .question:before{
             content:"+";
@@ -760,14 +755,27 @@ footer{
     }
 }
 
+@keyframes transitionIn{
+    from {
+        opacity: 0;
+        transform: rotateY(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
 
 @media (min-width:760px) {
-    .container{
+    .container {
         padding:1.5rem;
     }
     header{
-        .container{
+        .container-nav{
+            padding:1.5rem;
             align-items: unset;
+
             .mobile-menu{
                  display: none;
              }
@@ -849,10 +857,6 @@ footer{
             justify-content: space-around;
             .car-photo{
                 height: 300px;
-                .min-price{
-                    top:23px;
-                    left:9px;                   
-                }
                 img{
                     margin-top:1rem;
                     width:350px;
@@ -991,11 +995,11 @@ footer{
 }
 
 @media (min-width:1024px){
-    .container{
+    .container, .container-nav{
         max-width:1100px;
     }
     header{
-        .container{
+        .container-nav{
             .right-side-header{
                 flex-basis:60%;
                 .upper-nav{
@@ -1057,14 +1061,6 @@ footer{
                 height:500px;
                 flex-basis:45%;
                 padding-bottom:2.5rem;
-                .min-price{
-                    width: 75px;
-                    height: 75px;
-                    font-size: 1rem;
-                    span{
-                        font-size:1.5rem;
-                    }
-                }
                 img{
                     width:450px;  
                     margin-top: 50px; 
@@ -1218,7 +1214,7 @@ footer{
 }
 
 @media (min-width:1440px){
-    .container{
+    .container .container-nav{
         max-width:1300px;
     }
     header{
@@ -1243,21 +1239,6 @@ footer{
             h3{
                 font-size:1.8rem;
             } 
-            .car-photo{
-                .min-price{
-                    top:27px;
-                    width: 80px;
-                    height:80px;
-                    font-size:1.1rem;
-                    span{
-                        font-size:1.7rem;
-                    }
-                } 
-                img{
-                    width:530px;
-                    
-                }
-            }    
         }
         .particular-car .car-specs{
             font-size:1.3rem;

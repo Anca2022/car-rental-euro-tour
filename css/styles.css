@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -43,10 +47,14 @@ button:hover {
   box-shadow: 2px 1px 5px #c2b49e;
 }
 
-.container {
+.container, .container-nav {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.container {
+  animation: transitionIn 0.4s;
 }
 
 header {
@@ -56,25 +64,25 @@ header {
   background-color: white;
   box-shadow: 1px 0px 5px darkgrey;
 }
-header .container {
-  padding-bottom: 0.5rem;
+header .container-nav {
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .container .left-side-header {
+header .container-nav .left-side-header {
   display: flex;
   align-items: center;
 }
-header .container .left-side-header .mobile-menu {
+header .container-nav .left-side-header .mobile-menu {
   color: var(--accent2);
   font-size: 2rem;
   margin-right: 0.8rem;
 }
-header .container .left-side-header .close-menu {
+header .container-nav .left-side-header .close-menu {
   display: none;
 }
-header .container .left-side-header .display-exit-btn {
+header .container-nav .left-side-header .display-exit-btn {
   display: block;
   position: fixed;
   z-index: 3;
@@ -83,32 +91,32 @@ header .container .left-side-header .display-exit-btn {
   width: 30px;
   color: var(--accent2);
 }
-header .container .left-side-header .logo {
+header .container-nav .left-side-header .logo {
   display: none;
 }
-header .container .upper-nav {
+header .container-nav .upper-nav {
   display: flex;
   flex-direction: column;
 }
-header .container .upper-nav .goog-te-gadget {
+header .container-nav .upper-nav .goog-te-gadget {
   display: inline-block;
   color: transparent !important;
   margin-bottom: -20px;
 }
-header .container .upper-nav .goog-te-gadget span > a {
+header .container-nav .upper-nav .goog-te-gadget span > a {
   display: none;
 }
-header .container .upper-nav a {
+header .container-nav .upper-nav a {
   color: black;
   font-weight: bold;
 }
-header .container .upper-nav a i {
+header .container-nav .upper-nav a i {
   font-size: 1rem;
 }
-header .container .navbar {
+header .container-nav .navbar {
   display: none;
 }
-header .container .display-menu {
+header .container-nav .display-menu {
   display: block;
   background-color: var(--dark);
   position: fixed;
@@ -118,24 +126,24 @@ header .container .display-menu {
   top: 0;
   text-align: center;
 }
-header .container .display-menu ul {
+header .container-nav .display-menu ul {
   padding-top: 5rem;
 }
-header .container .display-menu ul li {
+header .container-nav .display-menu ul li {
   padding-bottom: 2rem;
   font-size: 1.5rem;
 }
-header .container .display-menu ul li a {
+header .container-nav .display-menu ul li a {
   padding-bottom: 2px;
   color: white;
 }
-header .container .display-menu ul li a:hover {
+header .container-nav .display-menu ul li a:hover {
   color: var(--accent2);
 }
-header .container .display-menu ul li .current {
+header .container-nav .display-menu ul li .current {
   border-bottom: 2px solid white;
 }
-header .container .display-menu ul li .current:hover {
+header .container-nav .display-menu ul li .current:hover {
   border-bottom: 2px solid var(--accent2);
 }
 
@@ -222,6 +230,9 @@ header .container .display-menu ul li .current:hover {
   justify-content: space-between;
   margin: 2rem 0.5rem;
 }
+.fleet .cars .car .car-buttons button {
+  cursor: pointer;
+}
 .fleet .cars .car .car-buttons a {
   color: black;
 }
@@ -250,22 +261,9 @@ header .container .display-menu ul li .current:hover {
   align-items: center;
 }
 .car-page .particular-car .car-photo {
-  position: relative;
   border-radius: 5px;
   box-shadow: 0px 0px 7px lightgray;
   height: 230px;
-}
-.car-page .particular-car .car-photo .min-price {
-  padding: 1px 5px;
-  top: 5px;
-  left: 5px;
-  width: 63px;
-  height: 63px;
-  font-size: 0.7rem;
-  line-height: 20px;
-}
-.car-page .particular-car .car-photo .min-price span {
-  font-size: 1.2rem;
 }
 .car-page .particular-car .car-photo img {
   padding-top: 20px;
@@ -410,6 +408,7 @@ header .container .display-menu ul li .current:hover {
   margin-top: -0.5rem;
   margin-right: 1rem;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .price-page .price-table .row:hover {
   background-color: rgba(29, 86, 86, 0.15);
@@ -635,6 +634,7 @@ header .container .display-menu ul li .current:hover {
   color: white;
   font-weight: 500;
   position: relative;
+  cursor: pointer;
 }
 .questions .question-unit .question:before {
   content: "+";
@@ -713,66 +713,77 @@ footer .container .lower-footer {
   font-size: 0.8rem;
 }
 
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateY(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
 @media (min-width: 760px) {
   .container {
     padding: 1.5rem;
   }
-  header .container {
+  header .container-nav {
+    padding: 1.5rem;
     align-items: unset;
   }
-  header .container .mobile-menu {
+  header .container-nav .mobile-menu {
     display: none;
   }
-  header .container .left-side-header .logo {
+  header .container-nav .left-side-header .logo {
     display: inline-block;
     width: 9rem;
   }
-  header .container .left-side-header .contract-logo {
+  header .container-nav .left-side-header .contract-logo {
     width: 6rem;
   }
-  header .container .right-side-header {
+  header .container-nav .right-side-header {
     flex-basis: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  header .container .right-side-header .upper-nav {
+  header .container-nav .right-side-header .upper-nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 3%;
   }
-  header .container .right-side-header .upper-nav .contact-no {
+  header .container-nav .right-side-header .upper-nav .contact-no {
     display: inline;
     font-weight: bold;
     margin-right: 1rem;
   }
-  header .container .right-side-header .contract-nav {
+  header .container-nav .right-side-header .contract-nav {
     display: none;
   }
-  header .container .right-side-header .navbar {
+  header .container-nav .right-side-header .navbar {
     display: block;
   }
-  header .container .right-side-header .navbar ul {
+  header .container-nav .right-side-header .navbar ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 0.5rem;
   }
-  header .container .right-side-header .navbar a {
+  header .container-nav .right-side-header .navbar a {
     color: var(--dark);
     font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: 0.2px;
     padding-bottom: 2px;
   }
-  header .container .right-side-header .navbar a:hover {
+  header .container-nav .right-side-header .navbar a:hover {
     color: var(--accent2);
   }
-  header .container .right-side-header .navbar .current {
+  header .container-nav .right-side-header .navbar .current {
     border-bottom: 2px solid var(--dark);
   }
-  header .container .right-side-header .navbar .current:hover {
+  header .container-nav .right-side-header .navbar .current:hover {
     border-bottom: 2px solid var(--accent2);
   }
   .first {
@@ -797,10 +808,6 @@ footer .container .lower-footer {
   }
   .car-page .particular-car .car-photo {
     height: 300px;
-  }
-  .car-page .particular-car .car-photo .min-price {
-    top: 23px;
-    left: 9px;
   }
   .car-page .particular-car .car-photo img {
     margin-top: 1rem;
@@ -928,16 +935,16 @@ footer .container .lower-footer {
   }
 }
 @media (min-width: 1024px) {
-  .container {
+  .container, .container-nav {
     max-width: 1100px;
   }
-  header .container .right-side-header {
+  header .container-nav .right-side-header {
     flex-basis: 60%;
   }
-  header .container .right-side-header .upper-nav .contact-no {
+  header .container-nav .right-side-header .upper-nav .contact-no {
     font-size: 1.15rem;
   }
-  header .container .right-side-header .navbar a {
+  header .container-nav .right-side-header .navbar a {
     font-size: 1.2rem;
   }
   .title {
@@ -978,14 +985,6 @@ footer .container .lower-footer {
     height: 500px;
     flex-basis: 45%;
     padding-bottom: 2.5rem;
-  }
-  .car-page .particular-car .car-photo .min-price {
-    width: 75px;
-    height: 75px;
-    font-size: 1rem;
-  }
-  .car-page .particular-car .car-photo .min-price span {
-    font-size: 1.5rem;
   }
   .car-page .particular-car .car-photo img {
     width: 450px;
@@ -1116,7 +1115,7 @@ footer .container .lower-footer {
   }
 }
 @media (min-width: 1440px) {
-  .container {
+  .container .container-nav {
     max-width: 1300px;
   }
   header .right-side-header {
@@ -1133,18 +1132,6 @@ footer .container .lower-footer {
   }
   .car-page .particular-car h3 {
     font-size: 1.8rem;
-  }
-  .car-page .particular-car .car-photo .min-price {
-    top: 27px;
-    width: 80px;
-    height: 80px;
-    font-size: 1.1rem;
-  }
-  .car-page .particular-car .car-photo .min-price span {
-    font-size: 1.7rem;
-  }
-  .car-page .particular-car .car-photo img {
-    width: 530px;
   }
   .car-page .particular-car .car-specs {
     font-size: 1.3rem;
